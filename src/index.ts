@@ -3,8 +3,10 @@ import { Order } from './srp/entities/Order';
 import { Messaging } from './srp/services/Messaging';
 import { Persistency } from './srp/services/Persistency';
 import { Product } from './srp/entities/Product';
+import { FiftyDiscount } from './srp/entities/Discount/FiftyDiscount';
 
-const shoppingCart = new ShoppingCart();
+const discount = new FiftyDiscount();
+const shoppingCart = new ShoppingCart(discount);
 const messaging = new Messaging();
 const persistency = new Persistency();
 const order = new Order(shoppingCart, messaging, persistency);
