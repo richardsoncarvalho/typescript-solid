@@ -1,6 +1,7 @@
 import { Discount } from "./Discount/Discount";
 import { CartItem } from "./interfaces/CartItem";
-export class ShoppingCart {
+import { IShoppingCart } from './interfaces/IShoppingCart';
+export class ShoppingCart implements IShoppingCart {
   private readonly _items: CartItem[] = [];
 
   constructor(private readonly discount: Discount) {}
